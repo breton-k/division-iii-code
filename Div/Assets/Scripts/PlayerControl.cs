@@ -107,7 +107,7 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	void OnTriggerStay3(Collider murf) {
-		if (murf.tag == "murf" && Input.GetKeyDown(KeyCode.W)) 
+		if (murf.tag == "SugarFarmer" && Input.GetKeyDown(KeyCode.W)) 
 		{
 			Application.LoadLevel(2);
 		}

@@ -13,3 +13,19 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
   - enabled: 1
     path: Assets/Scenes/shackattack.unity
+  - enabled: 1
+    path: Assets/Scenes/ZineOneScene.unity
+  - enabled: 1
+    path: Assets/Scenes/ZineTwoScene.unity
+  - enabled: 1
+    path: Assets/Scenes/ZineThreeScene.unity
+  - enabled: 1
+    path: Assets/Scenes/ZineFourScene.unity
+  - enabled: 1
+    path: Assets/Scenes/ZineFiveScene.unity
+  - enabled: 1
+    path: Assets/Scenes/ZineSixScene.unity
+  - enabled: 1
+    path: Assets/Scenes/ZineSevenScene.unity
+  - enabled: 1
+    path: Assets/ZineEightScene.unity
