@@ -46,27 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BackToFarm.cs" />
-     <Compile Include="Assets\NPCscript.cs" />
-     <Compile Include="Assets\Scripts\BackgroundParallax.cs" />
-     <Compile Include="Assets\Scripts\BackgroundPropSpawner.cs" />
-     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\Destroyer.cs" />
+     <Compile Include="Assets\Scripts\BackToFarm.cs" />
      <Compile Include="Assets\Scripts\EnterHouseScript.cs" />
-     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
-     <Compile Include="Assets\Scripts\Gun.cs" />
-     <Compile Include="Assets\Scripts\Pauser.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
-     <Compile Include="Assets\Scripts\Remover.cs" />
-     <Compile Include="Assets\Scripts\ScoreShadow.cs" />
-     <Compile Include="Assets\Scripts\SetParticleSortingLayer.cs" />
-     <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\XButton.cs" />
+     <Compile Include="Assets\Scripts\ZineCollectOne.cs" />
+     <Compile Include="Assets\Scripts\ZineInventoryScript.cs" />
+     <Compile Include="Assets\Scripts\mycologyfarmerScript.cs" />
      <Compile Include="Assets\Scripts\playGame.cs" />
      <Compile Include="Assets\Scripts\quitGame.cs" />
      <Compile Include="Assets\Scripts\storyGame.cs" />
-     <Compile Include="Assets\ZineCollectOne.cs" />
-     <Compile Include="Assets\ZineInventoryScript.cs" />
+     <Compile Include="Assets\Scripts\sugarfarmerScript.cs" />
+     <Compile Include="Assets\Scripts\zinemasterScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

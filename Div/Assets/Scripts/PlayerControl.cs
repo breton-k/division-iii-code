@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
 	[HideInInspector]
-	public bool jump = true;				// Condition for whether the player should jump.
+	public bool jump = false;				// Condition for whether the player should jump.
 
 
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
@@ -21,14 +21,14 @@ public class PlayerControl : MonoBehaviour
 	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
-	private Animator anim;					// Reference to the player's animator component.
-
+//	private Animator anim;					// Reference to the player's animator component.
+	private bool doublejump = true;
 
 	void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
-		anim = GetComponent<Animator>();
+//		anim = GetComponent<Animator>();
 	}
 
 
@@ -38,10 +38,18 @@ public class PlayerControl : MonoBehaviour
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Jump") && grounded)
-			jump = true;
+		if (Input.GetKeyDown (KeyCode.W))
+						Jump ();
 	}
 
+	void OnTriggerEnter(Collider col)
+	{
+		if(col.collider.tag == "ground")
+		{
+			grounded = true;
+			doublejump = true;
+		}
+	}
 
 	void FixedUpdate ()
 	{
@@ -71,24 +79,27 @@ public class PlayerControl : MonoBehaviour
 		else if(h < 0 && facingRight)
 			// ... flip the player.
 			Flip();
-
-		// If the player should jump...
-		if(jump)
-		{
-			// Set the Jump animator trigger parameter.
-			anim.SetTrigger("Jump");
-
-			// Play a random jump audio clip.
-			int i = Random.Range(0, jumpClips.Length);
-			AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
-
-			// Add a vertical force to the player.
-			rigidbody.AddForce(new Vector2(0f, jumpForce));
-
-			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
-			jump = false;
-		}
 	}
+
+
+	// If the player should jump...
+	void Jump()
+	{
+				// Set the Jump animator trigger parameter.
+				//anim.SetTrigger("Jump");
+				if (grounded == true) {
+						// Add a vertical force to the player.
+						rigidbody.AddForce (Vector3.up * jumpForce);
+						grounded = false;
+				} else if (!grounded && doublejump) {
+						rigidbody.AddForce (Vector3.up * jumpForce);
+						doublejump = false;
+				}
+		}
+
+		
+		// Make sure the player can't jump again until the jump conditions from Update are satisfied.
+		//jump = false;
 
 
 	void OnTriggerStay(Collider shackdoor) {
@@ -106,13 +117,6 @@ public class PlayerControl : MonoBehaviour
 		}
 	}
 
-	void OnTriggerStay3(Collider murf) {
-		if (murf.tag == "SugarFarmer" && Input.GetKeyDown(KeyCode.W)) 
-		{
-			Application.LoadLevel(2);
-		}
-	}
-	
 	void Flip ()
 	{
 		// Switch the way the player is labelled as facing.

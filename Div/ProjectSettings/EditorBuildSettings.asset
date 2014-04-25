@@ -28,4 +28,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZineSevenScene.unity
   - enabled: 1
-    path: Assets/ZineEightScene.unity
+    path: Assets/Scenes/ZineEightScene.unity

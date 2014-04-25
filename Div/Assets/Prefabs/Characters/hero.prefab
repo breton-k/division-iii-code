@@ -11,11 +11,13 @@ GameObject:
   - 20: {fileID: 2000000}
   - 92: {fileID: 9200000}
   - 124: {fileID: 12400000}
-  - 114: {fileID: 11400006}
+  - 114: {fileID: 11400000}
   - 82: {fileID: 8200000}
   - 81: {fileID: 8100000}
+  - 114: {fileID: 11400004}
+  - 114: {fileID: 11400008}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,8 +49,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 54: {fileID: 5400000}
   - 136: {fileID: 13600000}
-  - 114: {fileID: 11400000}
-  - 114: {fileID: 11400004}
+  - 114: {fileID: 11400006}
   m_Layer: 9
   m_Name: hero
   m_TagString: Player
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.75760555, y: -2.01582646, z: -.100000001}
+  m_LocalPosition: {x: -3.75760555, y: -1.71091819, z: .0128295645}
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1.20000005}
   m_Children:
   - {fileID: 400010}
@@ -115,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.201159716, y: -.273523122, z: 0}
+  m_LocalPosition: {x: -.201159716, y: -.107254781, z: .368685722}
   m_LocalScale: {x: .296399087, y: .296398699, z: .400000006}
   m_Children: []
   m_Father: {fileID: 400020}
@@ -155,8 +156,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100020}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 20
+  m_Mass: 5
+  m_Drag: 2
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -178,7 +179,7 @@ AudioSource:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 0e461d2949b2e4e0589712f96d3b895f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1af069d75440c4341ae46cb8e37977b0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -240,12 +241,21 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100020}
+  m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59eba1550f36d47d4a7d57b39ee758ab, type: 3}
+  m_Script: {fileID: 11500000, guid: a67fb66b30aaa418ebf07838c0c0e4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showGUI: 0
+  zineone: {fileID: 0}
+  zinetwo: {fileID: 0}
+  zinethree: {fileID: 0}
+  zinefour: {fileID: 0}
+  zinefive: {fileID: 0}
+  zinesix: {fileID: 0}
+  zineseven: {fileID: 0}
+  zineeight: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,7 +272,7 @@ MonoBehaviour:
   moveForce: 365
   maxSpeed: 8
   jumpClips: []
-  jumpForce: 1000
+  jumpForce: 3500
   taunts: []
   tauntProbability: 0
   tauntDelay: 0
@@ -271,13 +281,63 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46c92a29b89644ffb3045cb01bb577e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showGUI: 0
+  sugarFarmer: {fileID: 0}
+  sugarfarmerSpeech1: This is what I say to you before you pick up your first zine.
+  sugarfarmerSpeech2: This is what I say to you after you know how to make maple syrup.
+  secondfarmerSpeech1: This is what I say to you before you pick up your second zine.
+  secondfarmerSpeech2: This is what I say to you after you know how to make maple
+    syrup.
+  thirdfarmerSpeech1: This is what I say to you before you pick up your third zine.
+  thirdfarmerSpeech2: This is what I say to you after you know how to make maple syrup.
+  fourthfarmerSpeech1: This is what I say to you before you pick up your fourth zine.
+  fourthfarmerSpeech2: This is what I say to you after you know how to make maple
+    syrup.
+  fifthfarmerSpeech1: This is what I say to you before you pick up your fifth zine.
+  fifthfarmerSpeech2: This is what I say to you after you know how to make maple syrup.
+  sixthfarmerSpeech1: This is what I say to you before you pick up your sixth zine.
+  sixthfarmerSpeech2: This is what I say to you after you know how to make maple syrup.
+  seventhfarmerSpeech1: This is what I say to you before you pick up your seventh
+    zine.
+  seventhfarmerSpeech2: This is what I say to you after you know how to make maple
+    syrup.
+  eighthfarmerSpeech1: This is what I say to you before you pick up your eighth zine.
+  eighthfarmerSpeech2: This is what I say to you after you know how to make maple
+    syrup.
+  zineone: {fileID: 0}
+  zinetwo: {fileID: 0}
+  zinethree: {fileID: 0}
+  zinefour: {fileID: 0}
+  zinefive: {fileID: 0}
+  zinesix: {fileID: 0}
+  zineseven: {fileID: 0}
+  zineeight: {fileID: 0}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a21e6cbebeb94d8a8c64dad3452cc4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7321fa3292c2d4f2c84e2dd422378aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11400006
+  zineone: {fileID: 0}
+  zinetwo: {fileID: 0}
+  zinethree: {fileID: 0}
+  zinefour: {fileID: 0}
+  zinefive: {fileID: 0}
+  zinesix: {fileID: 0}
+  zineseven: {fileID: 0}
+  zineeight: {fileID: 0}
+--- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -285,10 +345,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a67fb66b30aaa418ebf07838c0c0e4de, type: 3}
+  m_Script: {fileID: 11500000, guid: b46c92a29b89644ffb3045cb01bb577e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   showGUI: 0
+  sugarFarmer: {fileID: 0}
+  sugarfarmerSpeech1: This is what I say to you before you pick up your first zine.
+  sugarfarmerSpeech2: This is what I say to you after you know how to make maple syrup.
+  secondfarmerSpeech1: This is what I say to you before you pick up your second zine.
+  secondfarmerSpeech2: This is what I say to you after you know how to make maple
+    syrup.
+  thirdfarmerSpeech1: This is what I say to you before you pick up your third zine.
+  thirdfarmerSpeech2: This is what I say to you after you know how to make maple syrup.
+  fourthfarmerSpeech1: This is what I say to you before you pick up your fourth zine.
+  fourthfarmerSpeech2: This is what I say to you after you know how to make maple
+    syrup.
+  fifthfarmerSpeech1: This is what I say to you before you pick up your fifth zine.
+  fifthfarmerSpeech2: This is what I say to you after you know how to make maple syrup.
+  sixthfarmerSpeech1: This is what I say to you before you pick up your sixth zine.
+  sixthfarmerSpeech2: This is what I say to you after you know how to make maple syrup.
+  seventhfarmerSpeech1: This is what I say to you before you pick up your seventh
+    zine.
+  seventhfarmerSpeech2: This is what I say to you after you know how to make maple
+    syrup.
+  eighthfarmerSpeech1: This is what I say to you before you pick up your eighth zine.
+  eighthfarmerSpeech2: This is what I say to you after you know how to make maple
+    syrup.
   zineone: {fileID: 0}
   zinetwo: {fileID: 0}
   zinethree: {fileID: 0}

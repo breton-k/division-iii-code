@@ -2,11 +2,15 @@
 using System.Collections;
 
 public class EnterHouseScript : MonoBehaviour {
-	
-	void OnTriggerStay(Collider door) {
-		if (door.tag == "door" && Input.GetKeyDown(KeyCode.W)) 
-			{
-			Application.LoadLevel(2);
-				}
+
+	public GameObject player;
+	private Vector3 shackdoor = new Vector3(-203f, -42.5f, 0f);
+
+	void Awake() {
+				player = GameObject.FindWithTag ("Player");
+		}
+
+	void OnMouseDown() {
+		player.transform.position = shackdoor;
 	}
 }
